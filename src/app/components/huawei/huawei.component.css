@@ -1,0 +1,390 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* ********************************* 导航栏菜单 ********************************** */
+
+.navbar {
+  width: 100%;
+  height: 36px;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-body {
+  width: 1250px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-body-left {
+  width: 430px;
+  height: 100%;
+}
+
+.navbar-body-right {
+  width: 470px;
+  height: 100%;
+}
+
+/* 菜单列表 */
+.navbar-list {
+  display: flex;
+  justify-content: space-around;
+  font-size: 12px;
+  line-height: 36px;
+}
+
+.navbar-list a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.navbar-item a:hover {
+  color: rgba(255, 255, 255);
+}
+
+.navbar-item-block a:hover {
+  color: rgb(203, 29, 29);
+  display: block;
+  background-color: rgba(255, 255, 255);
+}
+
+.navbar-item-cart {
+  background-color: rgba(166, 166, 166, 0.5);
+}
+
+/* 先定位下拉框所在的菜单项为 relative, 然后将下拉菜单定位为 absolute */
+.navbar-item-block {
+  position: relative; /* 使下拉菜单的定位基于父元素 */
+}
+
+.drop-list {
+  position: absolute;
+  right: 0;
+  display: none;
+  z-index: 1000;
+}
+
+.drop-list a {
+  white-space: nowrap; /* 确保文本不会换行 */
+  color: rgba(87, 87, 87, 0.6);
+}
+
+.navbar-item-block:hover .drop-list {
+  display: block;
+  background-color: rgba(255, 255, 255);
+}
+
+/* ******************************* 固钉菜单 ************************************ */
+.affixBar {
+  width: 100%;
+  height: 72px;
+  background-color: rgba(255, 255, 255);
+  display: flex;
+  justify-content: center;
+}
+
+.affixBar-body {
+  width: 1250px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.affixBar-body-left {
+  width: 600px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.affixBar-body-left-logo {
+  width: 140px;
+  height: 100%;
+}
+
+.affixBar-body-left-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.affixBar-body-left-title {
+  width: 400px;
+  height: 100%;
+}
+
+.affixBar-body-left-title ul {
+  display: flex;
+  justify-content: space-around;
+  font-size: 16px;
+  line-height: 72px;
+}
+
+.affixBar-body-left-title a {
+  color: black;
+}
+
+.affixBar-body-left-title a:hover {
+  color: red;
+}
+
+.affixBar-body-right {
+  width: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-icon {
+  font-size: xx-large;
+  color: rgba(166, 166, 166, 0.5);
+}
+
+.search-icon:hover {
+  color: rgba(166, 166, 166);
+}
+
+/* ********************************* 轮播图 ********************************** */
+.banner-base {
+  width: 100%;
+  height: 550px;
+  background-color: rgb(238, 237, 237);
+  display: flex;
+  justify-content: center;
+}
+
+.banner-body {
+  width: 1920px;
+  height: 100%;
+}
+
+nz-carousel img {
+  width: 100%;
+  height: 100%;
+}
+
+.banner-list {
+  width: fit-content;
+  height: 496px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  bottom: 520px;
+  left: 360px;
+}
+
+.banner-list-body-left {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+}
+
+.banner-list-item {
+  padding-left: 15px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.banner-list-item  a{
+  color: rgba(124, 124, 124, 0.9);
+  line-height: 40px;
+  font-size: 15px;
+}
+
+.banner-list-item:hover a{
+  color: black;
+}
+
+.banner-list-body {
+  display: flex;
+  height: 100%;
+  width: auto;
+}
+
+.banner-list-body-right {
+  width: 400px;     /* 应该设置为 fit-content, 根据内容的多少自适应 */
+  height: 100%;
+  background-color: #f3c7c7;
+  display: none;
+}
+
+.banner-list-item:hover .test{
+  background-color: red;
+}
+
+
+/* ********************************** body ********************************* */
+
+
+.body {
+  background-color: #f8f8f8;
+}
+
+/* ********************************** 产品系列展示 ********************************* */
+.p-series-display {
+  width: 100%;
+  height: 240px;
+  display: flex;
+  justify-content: center;
+}
+
+.p-series-display-body {
+  height: 100%;
+  width: 1250px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-evenly;
+  padding: 8px 4px;
+}
+
+.p-series-display-body-item {
+  width: 200px;
+  height: 95px;
+  padding: 8px 4px;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+}
+
+.p-series-display-body-item-img {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.p-series-display-body-item-title {
+  /*width: 50px;*/
+  /*height: 50px;*/
+  /*margin: 0 auto;*/
+  text-align: center;
+  margin-top: 10px;
+}
+
+.p-series-display-body-item-img  img{
+  width: 100%;
+  height: 100%;
+}
+
+.p-series-display-body-item:hover .p-series-display-body-item-title{
+  font-weight: bold;
+}
+
+.p-series-display-body-item:hover img{
+  transform: scale(1.1); /* 放大 10% */
+}
+
+
+/* ********************************* 福利专区 ********************************** */
+.welfare-zone {
+  width: 100%;
+  height: 177px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.welfare-zone-body {
+  width: 1250px;
+  height: 100%;
+  background-color: white;
+}
+
+.welfare-zone-body img{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+/* ******************************************************************* */
+
+.test {
+  height: 1200px;
+  background-color: #f8f8f8;
+}
+
+
+
+/* *********************************** 响应式 ******************************** */
+@media screen and (max-width:1250px){
+  * {
+    font-size: 0.8rem;
+  }
+
+
+  .navbar-body {
+    width: 100vw;
+  }
+  .navbar-body-left {
+    display: none;
+  }
+  .navbar-body-right {
+    width: 100vw;
+  }
+
+  .affixBar {
+    width: 100%;
+    height: 20%;
+  }
+  .affixBar-body {
+    width: 100vw;
+  }
+  .affixBar-body-left {
+    width: 80%;
+    height: 100%;
+  }
+  .affixBar-body-left-logo {
+    width: 30vw;
+    height: 100%;
+  }
+  .affixBar-body-left-title ul {
+    line-height: 10vw;
+  }
+
+  .affixBar-body-left-title {
+    width: 400px;
+    height: 100%;
+  }
+
+  .banner-base {
+    width: 100%;
+    height: 30%;
+  }
+  .banner-body {
+    width: 100vw;
+    height: 40vw;
+  }
+  .banner-list {
+    display: none;
+  }
+
+  .p-series-display-body {
+    width: 100vw;
+    height: 60vw;
+  }
+  .p-series-display-body-item {
+    width: 15vw;
+    height: 95px;
+    padding: 8px 4px;
+  }
+
+  .welfare-zone {
+    width: 100vw;
+    height: 20vw;
+  }
+
+
+}

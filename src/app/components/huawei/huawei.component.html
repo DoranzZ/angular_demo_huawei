@@ -1,0 +1,124 @@
+<!--导航栏元素 flex 居中布局-->
+<div class="navbar">
+<!--  导航体元素 flex 左右布局-->
+  <div class="navbar-body">
+<!--    导航菜单元素 flex space-around 布局-->
+    <div class="navbar-body-left">
+      <ul class="navbar-list">
+        <li class="navbar-item"><a href="#">首页</a></li>
+        <li class="navbar-item"><a href="#">消费者业务网站</a></li>
+        <li class="navbar-item"><a href="#">优购码</a></li>
+        <li class="navbar-item"><a href="#">企业商用</a></li>
+        <li class="navbar-item"><a href="#">Select Region</a></li>
+        <li class="navbar-item navbar-item-block">
+          <a href="#">更多精彩</a>
+          <ul class="drop-list">
+            <li class="drop-item"><a href="#">HarmonyOS</a></li>
+            <li class="drop-item"><a href="#">应用市场</a></li>
+            <li class="drop-item"><a href="#">华为终端云空间</a></li>
+            <li class="drop-item"><a href="#">开发者联盟</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-body-right">
+      <ul class="navbar-list">
+        <li class="navbar-item"><a href="#">请登录</a></li>
+        <li class="navbar-item"><a href="#">注册</a></li>
+        <li class="navbar-item"><a href="#">我的订单</a></li>
+        <li class="navbar-item navbar-item-block">
+          <a href="#">客服</a>
+          <ul class="drop-list">
+            <li class="drop-item"><a href="#">客服中心</a></li>
+            <li class="drop-item"><a href="#">联系客服</a></li>
+          </ul>
+        </li>
+        <li class="navbar-item navbar-item-block"><a href="#">网站导航</a></li>
+        <li class="navbar-item navbar-item-block"><a href="#">手机版</a></li>
+        <li class="navbar-item navbar-item-block navbar-item-cart"><a href="#"><span nz-icon nzType="shopping-cart" nzTheme="outline"></span>&nbsp;购物车(0)</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 固钉栏 -->
+<nz-affix>
+  <div class="affixBar">
+    <div class="affixBar-body">
+      <div class="affixBar-body-left">
+        <div class="affixBar-body-left-logo">
+          <img src="assets/Huawei-mall.png">
+        </div>
+        <div class="affixBar-body-left-title">
+          <ul>
+            <li class="navbar-item"><a href="#">华为</a></li>
+            <li class="navbar-item"><a href="#">鸿蒙智行</a></li>
+            <li class="navbar-item"><a href="#">华为智选</a></li>
+            <li class="navbar-item"><a href="#">生态周边</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="affixBar-body-right">
+        <span nz-icon nzType="search" nzTheme="outline" class="search-icon"></span>
+      </div>
+    </div>
+  </div>
+</nz-affix>
+
+<div class="body">
+  <!-- 轮播图 -->
+  <div class="banner-base">
+    <div class="banner-body">
+      <nz-carousel nzAutoPlay>
+        <div nz-carousel-content *ngFor="let item of bannerList">
+          <img [src]="item.url" alt="Banner">
+        </div>
+      </nz-carousel>
+      <div class="banner-list">
+        <div class="banner-list-body">
+          <div class="banner-list-body-left">
+            <!--          :hover 需要作用在内部元素上,因此影响不相干的元素需要用 ts + [ngStyle] 实现-->
+            <div class="banner-list-item"
+                 *ngFor="let item of banner_product_list"
+                 (mouseover)="onMouseOver_banner_p_item(item.id)"
+                 (mouseout)="onMouseOut_banner_p_item()">
+              <a href="#">{{item.title}}</a>
+              <span nz-icon nzType="right" nzTheme="outline"></span>
+            </div>
+          </div>
+          <div class="banner-list-body-right" [ngStyle]="{'display': element_display_status}">
+            {{ hovered_id }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--产品系列展示-->
+  <div class="p-series-display">
+    <div class="p-series-display-body">
+      <div class="p-series-display-body-item" *ngFor="let item of product_series_display_list">
+        <div class="p-series-display-body-item-img">
+          <img [src]="item.url" alt="">
+        </div>
+        <div class="p-series-display-body-item-title">{{item.title}}</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 福利专区 -->
+  <div class="welfare-zone">
+    <div class="welfare-zone-body"
+         (mouseover)="onMouseOver_welfare_zone_body()"
+         (mouseout)="onMouseOut_welfare_zone_body()"
+          [ngStyle]="{'box-shadow': boxShadow}">
+      <img src="assets/welfare_zone.png" alt="">
+    </div>
+  </div>
+
+
+  <div class="test"></div>
+</div>
+
+
